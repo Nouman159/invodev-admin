@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { FaHeadset } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FaBuilding } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
-import { FaUserShield } from "react-icons/fa";
-import { GrSchedule } from "react-icons/gr";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { FaCalendarCheck } from "react-icons/fa";
 import { IoBookSharp } from "react-icons/io5";
+import { FaUserDoctor } from "react-icons/fa6";
+import { RiAdminFill } from "react-icons/ri";
+import Doctors from "../Screens/Doctors/Doctors";
+
 
 
 
@@ -22,17 +21,12 @@ const panel = [
     //         { name: "Supervisor", path: "/Dashboard", icon: <FaRegBuilding />, sub: false }
     //     ]
     // },
-    { name: "Books ", path: "/Books", icon: <AiOutlineFundProjectionScreen />, sub: false },
-    // { name: "Department ", path: "/Department", icon: <FaBuilding />, sub: false },
-    // { name: "Roles ", path: "/Roles", icon: <FaUsers />, sub: false },
-    // { name: "Shifts ", path: "/Shifts", icon: <FaUserShield />, sub: false },
-    // { name: "Users ", path: "/Users", icon: <FaUserShield />, sub: false },
-    // { name: "Schedule ", path: "/Schedule", icon: <GrSchedule />, sub: false },
-    // { name: "Attendance ", path: "/Attendance", icon: <FaCalendarCheck />, sub: false },
+    { name: "Doctors ", path: "/doctors", icon: <FaUserDoctor />, sub: false },
+
 
 ]
 
-const sidePanel = () => {
+const SidePanel = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const location = useLocation();
@@ -43,22 +37,14 @@ const sidePanel = () => {
 
                 <div className='flex justify-center py-2 px-6 mt-5 bg-[#F46C64] text-white rounded-2xl shadow-md'>
                     <div className=' mr-2'>
-                        <IoBookSharp className=' h-7 w-6' />
+                        <RiAdminFill className=' h-7 w-6' />
                     </div>
                     <div className='text-center text-[20px] font-extrabold'>
-                        Books Admin
+                        Admin Panel
                     </div>
                 </div>
 
-                {/* <div className='flex flex-row items-center w-[90%] bg-[#FFFFFF] py-3 rounded-xl mt-10 mb-4 px-5 shadow-sm'>
-                    <div className=' mr-5'>
-                        <img src='./Assets/rmbm.jpeg' alt='nhi hy bhai ' className=' rounded-full h-12 w-12 ' />
-                    </div>
-                    <div className=' flex flex-col '>
-                        <div className='text-[16px] text-[#F46C64] font-bold'> Rana Bilal Mustafa </div>
-                        <div className='text-[12px] text-[#B6BBBF]'>  Sales Manager </div>
-                    </div>
-                </div> */}
+
 
                 {panel.map((item, index) => (
                     <div key={index} className='mt-2 text-black w-[75%] mt-5'
@@ -115,4 +101,4 @@ const sidePanel = () => {
     )
 }
 
-export default sidePanel
+export default SidePanel
